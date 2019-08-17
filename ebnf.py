@@ -19,3 +19,8 @@ even_numbers_before_fixed([1, 4, 2, 6, 3, 1], 6)
 even_numbers_before_fixed([2, 2, 2, 1], 3)
 even_numbers_before_fixed([2, 3, 4, 3], 3)
 even_numbers_before_fixed([1, 3, 4, 3], 3)
+
+'''
+def even_numbers_before_fixed(s, f):
+    return len([x for x in s[:s.index(f)] if x%2 == 0]) if f in s else -1
+'''
