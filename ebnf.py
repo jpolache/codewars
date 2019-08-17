@@ -2,8 +2,8 @@ def even_numbers_before_fixed(sequence, fixed_element):
     op = 0
     count = 0
     if fixed_element in sequence:
-        for  i in sequence:
-            if i%2 == 0 and i != fixed_element:
+        for i in sequence:
+            if i % 2 == 0 and i != fixed_element:
                 count += 1
             elif i == fixed_element:
                 if count > 0:
