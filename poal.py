@@ -1,8 +1,10 @@
 def partlist(arr):
-    s = " "
+    #s = " "
     for i, word in enumerate(arr):
-        print(s.join(arr[:i+1]), s.join(arr[i+1:]))
+        if i < len(arr)-1:
+
+            print([[" ".join(arr[:i+1])], [" ".join(arr[i+1:])]])
 
 partlist(["I", "wish", "I", "hadn't", "come"])
-partlist(["cdIw", "tzIy", "xDu", "rThG"])
-partlist(["vJQ", "anj", "mQDq", "sOZ"])
+#partlist(["cdIw", "tzIy", "xDu", "rThG"])
+#partlist(["vJQ", "anj", "mQDq", "sOZ"])
