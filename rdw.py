@@ -1,6 +1,7 @@
 def remove_duplicate_words(s):
-    for i in s.split():
-        print(i)
+    #s = list(dict.fromkeys( s.split() ))
+    #s = list(dict(s.split()))
+    print(set( s.split() ))
     pass
 
 remove_duplicate_words("alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta")
