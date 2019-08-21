@@ -1,7 +1,8 @@
 def capitalize(s):
-    ss = s.split()
-    for i in ss[1::2]:
-        print(i)
-
+    #ss = list(s)
+    print(s)
+    mapped = zip(s[::2].upper(), s[1::2].lower())
+    print(set(mapped))
+    
 capitalize("abcdef")
 capitalize("codewars")
