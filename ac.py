@@ -1,3 +1,4 @@
+'''
 def capitalize(s):
     op = ""
     op2 = ""
@@ -16,12 +17,13 @@ def capitalize(s):
     print(op)
     print(op2)
 
-capitalize("abcdef")
-capitalize("codewars")
-capitalize("abcdefg")
 
 '''
 def capitalize(s):
     s = ''.join(c if i%2 else c.upper() for i,c in enumerate(s))
+    print([s, s.swapcase()])
     return [s, s.swapcase()]
-'''
+
+capitalize("abcdef")
+capitalize("codewars")
+capitalize("abcdefg")
