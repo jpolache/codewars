@@ -10,9 +10,18 @@ def capitalize(s):
     for i in mapped2:
         for x in i:
             op2 = op2 + str(x)
-
+    if len(s)%2 != 0:
+        op = op + s[-1].upper()
+        op2 = op2 + s[-1].lower()
     print(op)
     print(op2)
 
 capitalize("abcdef")
 capitalize("codewars")
+capitalize("abcdefg")
+
+'''
+def capitalize(s):
+    s = ''.join(c if i%2 else c.upper() for i,c in enumerate(s))
+    return [s, s.swapcase()]
+'''
