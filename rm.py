@@ -8,3 +8,8 @@ def multiples(m, n):
 
 multiples(3, 5) #vec![5, 10, 15]
 multiples(4, 6) #vec![6, 12, 18, 24]
+
+'''
+def multiples(m, n):
+    return [i * n for i in range(1, m+1)]
+'''
