@@ -1,18 +1,14 @@
 def histogram(results):
-
-    op = []
+    results.reverse()
     for i, x in enumerate(results):
         line = ""
         line = line + str(6-i)
-        line = line + ("!")
+        line = line + ("|")
         if x > 0:
             for y in range(x):
                 line = line + ('#')
             line = line + (' ' + (str(x)))
-        print(line)
-    print("\n")
-    #op.append(line)
-    #print(op)
+        print(line + "\n", end='')
 
 histogram([0,0,0,0,0,0])
 histogram([3,6,2,4,6,1])
