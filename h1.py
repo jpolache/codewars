@@ -1,13 +1,22 @@
 def histogram(results):
+
+    op = []
     for i, x in enumerate(results):
+        line = ""
+        line = line + str(6-i)
+        line = line + ("!")
         if x > 0:
-            print(str(6-i) + '!')
-            for y in x:
-                print('#', end = '')
-            print(' ' + str(x))
+            for y in range(x):
+                line = line + ('#')
+            line = line + (' ' + (str(x)))
+        print(line)
+    print("\n")
+    #op.append(line)
+    #print(op)
 
 histogram([0,0,0,0,0,0])
 histogram([3,6,2,4,6,1])
+
 '''
 A 6-sided die is rolled a number of times and the results
 are plotted as a character-based histogram.
