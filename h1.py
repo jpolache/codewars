@@ -14,6 +14,9 @@ histogram([0,0,0,0,0,0])
 histogram([3,6,2,4,6,1])
 
 '''
+def histogram(results):
+    return "".join("{}|{} {}\n".format(7 - i, f * "#", f) for i, f in enumerate(reversed(results), 1)).replace(" 0", "")
+
 A 6-sided die is rolled a number of times and the results
 are plotted as a character-based histogram.
 
