@@ -1,6 +1,6 @@
 
 def number(bus_stops):
-     print([(x[0]-x[1]) for x in bus_stops])
+     print([sum((x[0]-x[1])) for x in bus_stops])
 
 number([[10,0],[3,5],[5,8]])
 
