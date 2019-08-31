@@ -3,9 +3,9 @@ print(a)
 b = sorted([item for item in a if item%2 == 0])
 odd_int = 0
 for i in range(len(a)):
-    print(a[i])
+    print("a[i]: ", a[i])
     if a[i] %2 == 0:
-        print([odd_int])
+        print("odd_int: ", [odd_int])
         a[i] = b[odd_int]
         odd_int += 1
 
