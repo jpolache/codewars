@@ -28,3 +28,6 @@ if by test is true test if [i][i:4] == "bytes"
 if test is true loop back from i for number
 test if number is prime
 test if number is < 1280 bytes
+
+fileTransfer("asl.$lf w0 bytese102 MBks&(0 23k0 GB604 KB,11 MB9ywu2048 MB7 bytes9tb23 GBkbie2o3kled,dl waer 6sx jer 68 MB", 128)  
+#, [ ["102 MB", "604 KB", "2048 MB", "68 MB"], [23, 11, 7], 1, true])
