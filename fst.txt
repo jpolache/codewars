@@ -1,0 +1,33 @@
+Instructions:
+0.) The thumb drive she's using is represented by the argument size in the function. It's always a whole number measured in GB.
+
+1.) Because of the Matzo-ball soup SNAFU, the list of file sizes on the hard drive she's trying to copy from is messed up and encased in blocks of random text. You'll have to find and add them to the list of file sizes. File sizes can be in bytes, KB, MB or GB (not TB or bits). Sizes will never be negative or a decimal, and the only valid format looks like: 768 MB, 740281 bytes, 22 GB, etc.
+
+2.) One KB is defined as 1024 bytes, not 1000. (Technically this is a KiB.)
+
+3.) Because of the nature of the agency back in 1997, the computer she's using always feels the need to check for primes. You only need to check to see that the number as found in the string (be it in MB, KB, bytes or GB) is not prime; it doesn't matter if it's prime once converted to bytes if you're choosing to do so. If it is prime, it won't be counted as part of the total size of the file transfer, but we do need to keep track of it.
+
+4.) Additionally, due to the wonky file system of the special thumb drive she's copying to, files smaller than one sector (1280 bytes) should be ignored. This won't invalidate anything, but if this number is prime, it needs to be added to the list of primes in addition to incrementing the number of dropped files.
+
+5.) Sample tests will be short, but full tests are pretty long. You'll need a reasonably efficient algorithm to get primes done in time; nothing too crazy, but don't do exponentially more work than you have to (hint).
+
+6.) Return an array in the following format: [ [array of all valid file sizes as they were found], [array of unique primes, sorted descending], number of files discarded for being < 1280 bytes, true/false depending on whether the files she wants to transfer will fit] ].
+
+Examples:
+Input: fileTransfer("1024 MB  16 KB  8 bytes  7 MB  13 GB  44102 bytes", 64)
+Output: [ ["1024 MB", "16 KB", "44102 bytes"], [13,7], 1, true ]
+
+Input: fileTransfer("52 GB  161 KB  8206 bytes  2704 MB  12 GB  98102 bytes", 64)
+Output: [['52 GB', '161 KB', '8206 bytes', '2704 MB', '12 GB', '98102 bytes'], [], 0,false]
+
+More realistic, less readable Input: fileTransfer("asl.$lf we102 MBks&(0 23k604 KB,11 MB9ywu2 GB7 bytes9tb23 GBkbie2o3kled,dl waer 6sx jer 68 MB", 128)
+Output: [ ["102 MB", "604 KB", "68 MB"], [23, 11, 2], 1, true]
+
+loop through every two char [i], [i+1] and test for a match to (GB, MB, KB, by)
+if by test is true test if [i][i:4] == "bytes"
+if test is true loop back from i for number
+test if number is prime
+test if number is < 1280 bytes
+
+fileTransfer("asl.$lf w0 bytese102 MBks&(0 23k0 GB604 KB,11 MB9ywu2048 MB7 bytes9tb23 GBkbie2o3kled,dl waer 6sx jer 68 MB", 128)  
+#, [ ["102 MB", "604 KB", "2048 MB", "68 MB"], [23, 11, 7], 1, true])
