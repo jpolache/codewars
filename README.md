@@ -1,2 +1,2 @@
 # codewars
-codewars
+WARRNIING! SPOLIERS!
