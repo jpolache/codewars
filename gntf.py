@@ -17,25 +17,35 @@ numeric_formatter("xxxx yyyy zzzz") == "1234 5678 9012"
 def numeric_formatter(template, _number):
     op = []
     i = 0
+    j = 0
     t_list = list(template)
     _end = len(t_list)
-    #_end += count
-    while i < _end: #in range(len(t_list)):
-        if t_list[i] != " " and i < len(_number):
-            op.append(_number[i])
-            i += 1
-        else:
-            op.append(" ")
-#        if i < _end:
-        print(op)
+#    num_len = len(_number)
+
+#    import code
+#    code.interact(local=locals())
+
+    while i < _end:
+        try:
+            if t_list[i] != " " and _number[j].isalpha():
+                op.append(_number[j])
+                j += 1
+                i += 1
+            elif not _number[j].isalpha():
+                j += 1
+                i += 1
+            elif t_list[i] == " " and _number[j].isalpha():
+                op.append(" ")
+                i += 1
+        except:
+            pass
+
     return op
     
     #return [x if t_list[i] != " " else " " for i, x in enumerate(_number)]  
 	
 
 print(*numeric_formatter("xxx xxxxx xx","5465253289")) # "546 52532 89")
-"""
-print(numeric_formatter("+555 aaaa bbbb")) # "18031978")) # "+555 1803 1978")
-print(numeric_formatter("+555 aaaa bbbb")) # "+555 1234 5678")
-print(numeric_formatter("xxxx yyyy zzzz")) # "1234 5678 9012")
-"""
+print(*numeric_formatter("+555 aaaa bbbb", "18031978")) # "+555 1803 1978")
+print(*numeric_formatter("+555 aaaa bbbb", "+555 1234 5678"))
+print(*numeric_formatter("xxxx yyyy zzzz", "1234 5678 9012"))
